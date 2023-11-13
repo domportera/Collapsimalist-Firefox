@@ -1,0 +1,11 @@
+
+/*---------------------------hide specific extensions from context menu---------------------*/
+[id^="wayback_machine_mozilla_org-menuitem"]
+{
+  display: none !important;
+}
+
+[id^="_e855175b-f84a-429d-85d6-a61831c8291c_-menuitem-_ctxmnu"]
+{
+  display: none !important;
+}

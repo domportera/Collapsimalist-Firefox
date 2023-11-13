@@ -1,0 +1,37 @@
+/* --------Sidebery Auto-hiding Sidebar ----------- */
+/*https://github.com/Redundakitties/colorful-minimalist/blob/main/hacks/sideberyModsLEFT.css*/
+/* width of panel (grey box) (different from width of each tab) */
+#main-window:not([extradragspace="true"]) 
+#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:not([hidden]) {
+  width: var(--autohide-sidebar-collapsed) !important;
+  --sidebar-width: var(--autohide-sidebar-collapsed);
+  min-width: unset !important;
+  z-index: 1;
+  transition: all var(--transition-time) ease-in-out;
+  /* doesn't do anything unless you uncomment lower bit of code */
+}
+
+/* width of tabs */
+#main-window:not([extradragspace="true"]) 
+#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] #sidebar 
+#main-window:not([extradragspace="true"]) 
+#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] #sidebar-header{
+  width: var(--autohide-sidebar-collapsed) !important;
+  /*transition: all var(--transition-time) ease-in-out;*/
+}
+
+/* width of tabs on hover */
+#main-window:not([extradragspace="true"]) 
+#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:hover #sidebar,
+#main-window:not([extradragspace="true"]) 
+#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:hover #sidebar-header {
+  width: var(--autohide-sidebar-extended) !important;
+}
+
+/* adjust if your sidebery is not tall enough */
+/* #main-window:not([extradragspace="true"])[inFullscreen] 
+#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"],
+#main-window:not([extradragspace="true"]) 
+#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
+  height: var(--sidebar-height);
+} */
