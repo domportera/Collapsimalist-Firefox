@@ -9,7 +9,7 @@ See the above repository for updates as well as full license text. */
   --uc-sidebar-hover-width: 320px;
   --uc-autohide-sidebar-delay: 0ms; /* Wait 0.6s before hiding sidebar */
   --uc-autohide-transition-duration: 60ms;
-  --uc-autohide-transition-type: linear;
+  --uc-autohide-transition-type: ease-out;
   position: relative;
   min-width: var(--uc-sidebar-width) !important;
   width: var(--uc-sidebar-width) !important;
