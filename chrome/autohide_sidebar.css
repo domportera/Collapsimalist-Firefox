@@ -7,16 +7,16 @@ See the above repository for updates as well as full license text. */
 #sidebar-box{
   --uc-sidebar-width: 100px;
   --uc-sidebar-hover-width: 320px;
-  --uc-autohide-sidebar-delay: 0ms; /* Wait 0.6s before hiding sidebar */
+  --uc-autohide-sidebar-delay: 100ms; /* Wait 0.6s before hiding sidebar */
   --uc-autohide-transition-duration: 60ms;
-  --uc-autohide-transition-type: ease-out;
+  --uc-autohide-transition-type: linear;
+  --browser-area-z-index-sidebar: 3;
   position: relative;
   min-width: var(--uc-sidebar-width) !important;
   width: var(--uc-sidebar-width) !important;
   max-width: var(--uc-sidebar-width) !important;
-  z-index:1;
+  z-index: var(--browser-area-z-index-sidebar,3);
 }
-
 #sidebar-box[positionend]{ direction: rtl }
 #sidebar-box[positionend] > *{ direction: ltr }
 
