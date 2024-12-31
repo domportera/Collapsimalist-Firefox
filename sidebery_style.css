@@ -1,40 +1,28 @@
-#root.root {--search-height: 28px;}
-#root.root {--tabs-height: 28px;}
-#root.root {--ctx-menu-icon-opt-height: 28px;}
 #root.root {--tabs-margin: 1px;}
-#root.root {--ctx-menu-shadow: 0 0 0 1px rgb(49, 48, 57), 0 1px 16px 0 rgba(0,0,0,0.282);}
-#root.root {--ctx-menu-bg: #14141bff;}
 #root.root {--tabs-indent: 16px;}
+#root.root {--tabs-height: 28px;}
 
-:root
-{
-  --tst-animate-time: 60ms; 
-  --tst-ease: ease-out;
-  --tab-width: 100px;
-  --transition-full: all var(--tst-animate-time) var(--tst-ease)!important;
+#root.root{
+  --transition-full: all 60ms linear !important;
   
-  --thin-tab-width: 72px;
-  --wide-tab-width: 372px;
   --close-box-display: normal;
   --tab-height-hover-multiplier: 1.5;
 
 	--current-tab-height: var(--tabs-height);
+	--tab-defaultheight: calc(var(--tabs-height) + var(--tabs-margin));
 }
 
-
-.SearchBar:hover{
+.Tab:hover{
   transition: var(--transition-full);
-	height: calc(var(--search-height) * var(--tab-height-hover-multiplier));
+	--current-tab-height: calc(var(--tabs-height) * var(--tab-height-hover-multiplier) + var(--tabs-margin));
+  height: var(--current-tab-height) !important;
 }
 
-.SearchBar:not(:hover){
+.Tab:not(:hover){
   transition: var(--transition-full);
+	--current-tab-height: calc(var(--tabs-height) + var(--tabs-margin));
+  height: var(--current-tab-height) !important;
 }
-
-.SearchBar .placeholder{
-	opacity: 0 !important;
-}
-
 
 .Tab .body:after{
   transition: var(--transition-full);
@@ -42,98 +30,21 @@
 	top: calc(-20% * var(--current-tab-height) + var(--tabs-margin));
 } 
 
-
-.Tab
-{
-  transition: var(--transition-full);
-	height: var(--current-tab-height) !important;
-}
-
-.Tab:hover{
-  transition: var(--transition-full);
-	--current-tab-height: calc(var(--tabs-height) * var(--tab-height-hover-multiplier) + var(--tabs-margin));
-}
-
-.Tab:not(:hover){
-  transition: var(--transition-full);
-	--current-tab-height: calc(var(--tabs-height) + var(--tabs-margin));
-}
-
-:root
-{
-  transition: var(--transition-full);
-}
-
-:root:hover
-{
-  transition: var(--transition-full);
-  --tab-width: var(--wide-tab-width);
-  --close-box-display: normal;
-}
-
-:root:not(:hover)
-{
-  transition: var(--transition-full);
-  --tab-width: var(--thin-tab-width);
-  --close-box-display: none;
-}
-
-:root:hover .body
-{
-}
-
-:root:not(:hover) .body
-{
-  transition: var(--transition-full);
-	 margin: 0px !important;
-   margin-left: 5%;
-}
-
-:root:not(:hover) .scroll-container
-{
-  transition: var(--transition-full);
-	overflow: hidden !important;
-}
-
 :root:not(:hover) .Tab
 {
-  transition: var(--transition-full);
 	padding-left: 0px !important;
 }
 
-:root:hover .Tab .fav
-{
-  transition: var(--transition-full);
-}
 
 :root:not(:hover) .Tab .fav
 {
-  transition: var(--transition-full);
 	 margin: 28px;
 }
 
 
-.title
-{
-  transition: var(--transition-full);
-   filter: brightness(0.85);
-}
-
 :root:not(:hover) .title
 {
-  transition: var(--transition-full);
    color: transparent !important;
-}
-
-
-.BottomBar,
-.new-tab-btns, 
-.central-box,
-.bottom-space,
-.bottom-bar-space,
-{
-  transition: var(--transition-full);
-	width: var(--tab-width) !important;
 }
 
 .BottomBar .tool-btn
